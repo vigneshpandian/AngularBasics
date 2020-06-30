@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div class="container">
     <div class="row">
         <div class="form-group">
             <label>{{lblText}}</label>
@@ -15,18 +15,4 @@
     </div>
 </div>
 <hr>
-<div class="container">
-    <div class="row" *ngIf="computers.length > 0" else="#noData">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let data of computers">
-                {{data}}
-            </li>
-        </ul>
-    </div>
-    <ng-template #noData>
-        no data
-    </ng-template>
-    
-</div> -->
-
-<app-pc-configuration></app-pc-configuration>
+<app-pc-grid [item] = "computers" ></app-pc-grid>

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row" *ngIf="item.length > 0" else="#noData">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let data of item">
+                {{data}}
+            </li>
+        </ul>
+    </div>
+    <ng-template #noData>
+        no data
+    </ng-template>
+    
+</div>
