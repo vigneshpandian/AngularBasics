@@ -9,22 +9,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AngularBasics';
   name = 'Vignesh';
-  // lblText = "Gaming PC Name";
-  // computerName = "";
+  lblText = "Gaming PC Name";
+  computerName = "";
 
-  // computers = [];
+  computers: Array<String> = [];
+
+  enableComputerButton() {
+    return this.computerName == "";
+  }
+
+  captureTypedText(event: any) {
+
+  }
+
+  onButtonClicked(event: any) {
+    this.computers.push(this.computerName);
+    this.computerName = "";
+  }
+
   
-  // enableComputerButton(){
-    
-  //   return this.computerName == "";
-  // }
-
-  // captureTypedText(event:any){
-    
-  // }
-
-  // onButtonClicked(event:any){
-  //   this.computers.push(this.computerName);
-  //   this.computerName = "";
-  // }
 }

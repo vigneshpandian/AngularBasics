@@ -16,17 +16,19 @@
 </div>
 <hr>
 <div class="container">
-    <div class="row" *ngIf="computers.length > 0" else="#noData">
+    <div class="row" *ngIf="computers.length > 0; else noData">
+
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let data of computers">
                 {{data}}
             </li>
         </ul>
-    </div>
-    <ng-template #noData>
-        no data
-    </ng-template>
-    
-</div> -->
 
-<app-pc-configuration></app-pc-configuration>
+    </div>
+
+
+</div>
+<ng-template #noData>
+    no records yet
+</ng-template> -->
+<app-pc-creator ></app-pc-creator>
