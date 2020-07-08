@@ -1,5 +1,5 @@
-
-<app-pcform (computerCreated) = "onComputerAdded($event)" 
-[inputFromParent] = "servers">
-
+<app-pcform (computerCreated)="onComputerAdded($event)" [inputFromParent]="servers">
+    <div class="row">
+        <app-pcgrid [inputFromParent]="servers"></app-pcgrid>
+    </div>
 </app-pcform>

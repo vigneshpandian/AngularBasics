@@ -3,7 +3,7 @@
         <div class="form-group">
             <label>{{lblText}}</label>
             &nbsp;&nbsp;
-            <input [(ngModel)]="computerName" type="text" />
+            <input [(ngModel)]="computerName" type="text" #pcName />
 
         </div>
     </div>
@@ -12,7 +12,15 @@
             <input type="button" [disabled]="enableComputerButton()" (click)="onButtonClicked($event)" value="Save"
                 class="btn btn-primary" />
         </div>
+        &nbsp;
+        <div class="form-group clearfix">
+            <input type="button" (click) = "clear(pcName)" value="Clear" class="btn btn-secondary">
+        </div>
+        &nbsp;
+        <div class="form-group">
+            <input type="button" (click) = "destroyGrid()" value="Destroy" class="btn btn-danger">
+        </div>
     </div>
 </div>
 <hr>
-<app-pcgrid [inputFromParent] = "computers"></app-pcgrid>
+<ng-content></ng-content>

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, SimpleChanges, 
+  OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { InvokeFunctionExpr } from '@angular/compiler';
 
 @Component({
@@ -12,9 +13,11 @@ export class PcformComponent implements OnInit {
   computerName = "";
 
   @Input('inputFromParent') computers: Array<string>;
-  
+
   @Output() computerCreated = new EventEmitter<Array<string>>();
-  
+
+  @ViewChild('pcName') pcName: ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -38,8 +41,38 @@ export class PcformComponent implements OnInit {
     this.computerCreated.emit(this.computers);
 
   }
-  onComputerAdded(event:any){
+
+  clear(event: any) {
+    event.value = "";
+    this.pcName.nativeElement.setAttribute("placeholder", "enter value"); //view child
+    console.log(event);
+  }
+  onComputerAdded(event: any) {
     console.log("I'm emitted")
   }
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges' + changes)
+  }
 
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit called');
+  }
+
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked checked')
+  }
+
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit() called');
+    
+  }
+
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked called');
+  }
+  
+  destroyGrid(){
+   
+    this.computers.pop();
+  }
 }
