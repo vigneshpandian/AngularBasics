@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, OnDestroy, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-pcgrid',
@@ -25,6 +25,7 @@ export class PcgridComponent implements OnInit {
   ngOnDestroy(){
     console.log('ngDestroy called')
   }
- 
+  
+  
 
 }

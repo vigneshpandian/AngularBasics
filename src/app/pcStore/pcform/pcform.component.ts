@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, SimpleChanges, 
-  OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+  OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ContentChild } from '@angular/core';
 import { InvokeFunctionExpr } from '@angular/compiler';
 
 @Component({
@@ -17,6 +17,8 @@ export class PcformComponent implements OnInit {
   @Output() computerCreated = new EventEmitter<Array<string>>();
 
   @ViewChild('pcName') pcName: ElementRef;
+
+  @ContentChild('content') content : ElementRef;
 
   constructor() { }
 
@@ -53,13 +55,17 @@ export class PcformComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnChanges' + changes)
   }
-
   ngAfterContentInit(){
     console.log('ngAfterContentInit called');
+
+   
   }
+  
 
   ngAfterContentChecked(){
     console.log('ngAfterContentChecked checked')
+
+    console.log("content child" + this.content);
   }
 
   ngAfterViewInit(){
