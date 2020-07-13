@@ -12,7 +12,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Install dependencies
 
-Run "npm install" inside this project folder to install all dependencies.
+Run 'npm install` inside this project folder to install all dependencies.
 
 ## Build
 
