@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-pc-creator',
@@ -9,7 +9,11 @@ export class PcCreatorComponent implements OnInit {
 
   servers: Array<string> = [];
 
-  constructor() { }
+  constructor() {
+
+      console.log('constructor called');
+
+   }
 
   ngOnInit(): void {
     console.log('ngOnInit called');
@@ -18,6 +22,10 @@ export class PcCreatorComponent implements OnInit {
   onComputerAdded(event: any) {
     console.log("I'm emitted")
     console.log(event);
+  }
+
+  ngOnDestroy(){
+     console.log('ngOnDestroy() called')
   }
 
 }

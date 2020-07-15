@@ -4,9 +4,9 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, 
   selector: 'app-pcgrid',
   templateUrl: './pcgrid.component.html',
   styleUrls: ['./pcgrid.component.css'],
-  encapsulation : ViewEncapsulation.Emulated,
+ // encapsulation : ViewEncapsulation.Emulated,
 })
-export class PcgridComponent implements OnInit {
+export class PcgridComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input('inputFromParent') computers:Array<string> = [];
 

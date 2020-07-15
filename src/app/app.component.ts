@@ -8,24 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularBasics';
-  name = 'Vignesh';
-  lblText = "Gaming PC Name";
-  computerName = "";
 
-  computers: Array<String> = [];
+  navigateToMenu: string;
 
-  enableComputerButton() {
-    return this.computerName == "";
+
+  navigateTo(menuLink: string) {
+    this.navigateToMenu = menuLink;
   }
-
-  captureTypedText(event: any) {
-
-  }
-
-  onButtonClicked(event: any) {
-    this.computers.push(this.computerName);
-    this.computerName = "";
-  }
-
-  
 }

@@ -1,34 +1,11 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="form-group">
-            <label>{{lblText}}</label>
-            &nbsp;&nbsp;
-            <input [(ngModel)]="computerName" type="text" />
+<header>
+    <app-pc-header (onSelected)=navigateTo($event)></app-pc-header>
+</header>
 
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="button" [disabled]="enableComputerButton()" (click)="onButtonClicked($event)" value="Save"
-                class="btn btn-primary" />
-        </div>
-    </div>
-</div>
-<hr>
 <div class="container">
-    <div class="row" *ngIf="computers.length > 0; else noData">
-
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let data of computers">
-                {{data}}
-            </li>
-        </ul>
-
-    </div>
-
-
+    <app-pc-creator *ngIf="navigateToMenu === 'pcAssembler'"></app-pc-creator>
+     <app-pc-inventory *ngIf="navigateToMenu === 'inventory'"></app-pc-inventory>
 </div>
-<ng-template #noData>
-    no records yet
-</ng-template> -->
-<app-pc-creator ></app-pc-creator>
+<footer>
+    <!-- <app-footer></app-footer> -->
+</footer>
