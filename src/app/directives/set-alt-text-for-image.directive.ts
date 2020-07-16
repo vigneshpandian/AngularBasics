@@ -10,7 +10,7 @@ export class SetAltTextForImageDirective implements OnInit{
   srcAttributes: Array<string>;
 
   constructor(private element: ElementRef, private renderer: Renderer2) { 
-  
+    
   }
 
   ngOnInit(){
@@ -19,6 +19,7 @@ export class SetAltTextForImageDirective implements OnInit{
     this.srcAttributes = this.imageSrc.split("/");
 
     this.renderer.setAttribute(this.element.nativeElement, 'alt', this.srcAttributes[this.srcAttributes.length-1]);
-  }
+
+    }
 
 }

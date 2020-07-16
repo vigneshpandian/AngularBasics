@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppHighlightDirective } from './directives/app-highlight.directive';
 import { PcInventoryComponent } from './pc-inventory/pc-inventory.component';
 import { SetAltTextForImageDirective } from './directives/set-alt-text-for-image.directive';
+import { SetTitleForImageDirective } from './directives/set-title-for-image.directive';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SetAltTextForImageDirective } from './directives/set-alt-text-for-image
     AppHighlightDirective,
     PcInventoryComponent,
     SetAltTextForImageDirective,
+    SetTitleForImageDirective,
    
     
   ],

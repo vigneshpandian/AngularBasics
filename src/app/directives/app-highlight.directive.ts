@@ -9,8 +9,6 @@ export class AppHighlightDirective implements OnInit, AfterViewChecked, AfterVie
 
   ngOnInit(){
     this.renderer.setStyle(this.element.nativeElement, 'color','red');
-    
-    // this.renderer.addClass(this.element.nativeElement, "highlighter");
   }
 
   ngAfterViewInit(){
